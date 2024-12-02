@@ -9,6 +9,7 @@ $username = 'lab5_user';
 $password = 'password123';
 $dbname = 'world';
 
+// Initiates the connection.
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 $country = filter_input(INPUT_GET,'country',FILTER_SANITIZE_STRING);
 $context = filter_input(INPUT_GET,'context',FILTER_SANITIZE_STRING);
@@ -23,35 +24,34 @@ else{
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// $lookup = filter_input(INPUT_GET,'query',FILTER_SANITIZE_STRING); //Initializes the search bar to search the array for what was entered.
-// $found = false;//initializes found to false.
-
-// $cname = $conn->query("SELECT name * FROM countries");
-
 ?>
 
 <table>
 <?php if ($context == 'cities'):?>
+  <!-- table headers for cities table. -->
 	<tr>
 		<th>Name</th>
 		<th>District</th>
 		<th>Population</th>
 	</tr>
+  <!-- Fills the table with the respective record for each city header -->
 	<?php foreach ($results as $row): ?>
     <tr>
-      <th><?= $row['name']; ?></th>
-      <th><?= $row['district']; ?></th>
-      <th><?= $row['population']; ?></th>
+      <td><?= $row['name']; ?></td>
+      <td><?= $row['district']; ?></td>
+      <td><?= $row['population']; ?></td>
     </tr>
   <?php endforeach; ?>
 
 <?php else: ?>
+  <!-- table header for countries table. -->
 	<tr>
 		<th>Name</th>
 		<th>Contintent</th>
 		<th>Independence</th>
 		<th>Head of State</th>
 	</tr>
+  <!-- Fills the table with the respective record for each city header -->
   <?php foreach ($results as $row): ?>
     <tr>
       <td><?= $row['name']; ?></td>

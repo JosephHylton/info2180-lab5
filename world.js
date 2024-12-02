@@ -1,7 +1,7 @@
 window.onload = function(){
 
     const countrylookupBtn = document.querySelector('#lookup');
-    const cityLookupbtn = document.querySelector("#lookup_city")
+    const cityLookupbtn = document.querySelector("#lookup_cities")
     var httpReq;
 
     countrylookupBtn.addEventListener('click', function(elements){
@@ -9,7 +9,7 @@ window.onload = function(){
         elements.preventDefault();
         
 
-        //making an AJAX request
+        //making an AJAX request for countries from the countries database
         httpReq = new XMLHttpRequest();
         const lookup = document.querySelector('#country').value;
         let url = "http://localhost/info2180-lab5/world.php?country=";//"superheroes.php?query= http://localhost/info2180-lab4/superheroes.php";
@@ -22,12 +22,13 @@ window.onload = function(){
     cityLookupbtn.addEventListener('click', function(elements){
         elements.preventDefault();
 
-        httpsRequest = new XMLHttpRequest();
+        //making an AJAX request for cities from the cities database
+        httpReq = new XMLHttpRequest();
         const lookup = document.querySelector('#country').value;
         let url = 'http://localhost/info2180-lab5/world.php?country=';
-        httpsRequest.onreadystatechange = countryLookup;
-        httpsRequest.open('GET', url+lookup+'&context=cities', true);
-        httpsRequest.send();
+        httpReq.onreadystatechange = countryLookup;
+        httpReq.open('GET', url+lookup+'&context=cities', true);
+        httpReq.send();
         console.log(lookup);
     });
 

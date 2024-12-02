@@ -93,6 +93,31 @@ main >#controls > input{
     font-size: 15px;
 }
 
+/* main >#controls > button{
+    /* background: linear-gradient(135deg, #009879, bisque); */
+    /* background-color: #009879; */
+    /* color: whitesmoke; */
+    /* color: #fa4; */
+/* } */ 
+
+/* main >#controls > #lookup:hover{ */
+    /* background: linear-gradient(135deg, bisque, #009879); */
+    /* background-color: #009879; */
+/* } */
+
+/* main >#controls > #lookup:active{
+    transform: scale(0.97);
+} */
+
+/* main >#controls > #lookup_cities:hover{ */
+    /* background: linear-gradient(135deg, bisque, #009879); */
+    /* background-color: bisque; */
+/* } */
+
+/* main >#controls > #lookup_cities:active{
+    transform: scale(0.97);
+} */
+
 /* main > #result{ */
     /* justify-content: left; */
     /* display: flex; */
@@ -100,3 +125,46 @@ main >#controls > input{
     /* align-items: flex-start; */
     /* padding-right: 60%; */
 /* } */
+
+main > #result > table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+main > #result > table > tbody > tr > th{
+    background-color: #009879;
+    color: antiquewhite;
+    text-align: left;
+    font-weight: bold;
+    padding: 12px 15px;
+}
+
+main > #result > table > tbody > tr > td{
+    padding: 12px 15px;
+}
+
+main > #result > table > tbody > tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+main > #result > table > tbody > tr:nth-of-type(even){
+    background-color: bisque;
+    /* background-color: #f3f3f3; */
+}
+
+main > #result > table > tbody > tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
+
+footer{
+    text-align: center;
+    border-top: 2px solid #777;
+    /* background-color: #009879; */
+
+}
+
